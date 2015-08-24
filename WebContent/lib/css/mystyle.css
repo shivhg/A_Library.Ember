@@ -1,29 +1,29 @@
-#details{
-	position: absolute;
+#details {
+    position: absolute;
     left: 660px;
     top: 70px;
 }
-#books{
-	width:400px;
+#books {
+    width: 400px;
 }
-#createbtn{
-	
-}
-#coverpage{
-	position: absolute;
+#coverpage {
+    position: absolute;
     left: 450px;
     top: 90px;
 }
-
-#details h1{
-	font-size:1.5em;
-	font-family:Impact, fantasy;
+#details h1 {
+    font-size: 1.5em;
+    font-family: Impact, fantasy;
 }
-
-#new{
-	position: absolute;
+#new {
+    position: absolute;
     left: 860px;
     top: 90px;
 }
-
-.form-group {display: inline;}
+.form-group {
+    display: inline;
+}
+p{
+	width:800px;
+	margin-left:100px;
+}
