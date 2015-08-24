@@ -45,12 +45,12 @@
         <button class="btn btn-primary" {{action "createbook"}} {{bind-attr disabled=increate}}>Add New</button>
         <br/>
         <br/>
-        <button class="btn btn-info">Favourites &nbsp;&nbsp;&nbsp; {{favouritecnt}}</button>
+        <button class="btn btn-info">Favourites &nbsp;&nbsp;&nbsp; <span id="favcnt">{{favouritecnt}}</span></button>
         {{outlet}}
     </script>
 
     <script type="text/x-handlebars" id="contactme">
-        contact : <a href="http://emberjs.com/" target="_blank">Ember Js</a>
+        <label>contact :</label> <a href="http://emberjs.com/" target="_blank">Ember Js</a>
     </script>
 
     <script type="text/x-handlebars" id="books/details">

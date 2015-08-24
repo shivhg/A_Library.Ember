@@ -27,3 +27,9 @@ p{
 	width:800px;
 	margin-left:100px;
 }
+.nav .active { background-color:white }
+#favcnt{
+	color:red;
+	font-size:15x;
+	font-weight:bold;
+}
