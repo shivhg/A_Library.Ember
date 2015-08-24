@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+  <link rel="stylesheet" href="lib/css/normalize.css">
+  <link rel="stylesheet" href="lib/css/style.css">
+  <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/css/mystyle.css">
+<title>Insert title here</title>
+</head>
+<body>
+  <script type="text/x-handlebars">
+    <nav class="navbar navbar-default">
+     <div class="container-fluid">
+      <div class="navbar-header">
+       <a class="navbar-brand" href="#">LibraryApp</a>
+       </div>
+      <div>
+      <ul class="nav navbar-nav">
+		<li class="active">{{#link-to 'about'}}About{{/link-to}}</li>
+		<li>{{#link-to 'contactme'}}Contact Me{{/link-to}}</li>
+		<li>{{#link-to 'books'}}Books{{/link-to}}</li>
+       </ul>
+      </div>
+     </div>
+    </nav>
+	{{outlet}}
+  </script>
+  
+  <script type="text/x-handlebars" id = "about">
+	about
+  </script>
+  
+   <script type="text/x-handlebars" id = "books">
+	<div class="list-group" id = "books">
+	 {{#each book in model}}
+      {{#link-to  'books.details' book.id	 class="list-group-item"}}{{book.name}}{{/link-to}}
+	 {{/each}}
+    </div>
+	<button {{action "createbook"}}>Add New</button>
+	{{outlet}}
+   </script>
+  
+   <script type="text/x-handlebars" id = "contactme">
+	contact
+   </script>
+  
+   <script type="text/x-handlebars" id = "books/details">
+   	<div id = "coverpage"><img {{bind-attr src=imagesrc}} alt="cant load" width="200" height="250"></div>
+	<div id = "details">
+	  <h1>{{name}}</h1>
+	  Author :  {{author}}<br/>
+	  Description : {{description}} <br/>
+	</div>
+   </script>
+   
+   <script type="text/x-handlebars" id = "books/new">
+	<div id = "new">
+	<div class = "form-group">
+	 <label for="name">Name :</label> {{input value = name id = "name" class="form-control"}} 
+	</div>
+	<div class = "form-group">
+	 <label for = "author">Author :</label>{{input value = author id = "author" class="form-control"}}
+	</div>
+	<div class = "form-group">
+	 <label for = "desc">Description :</label>{{input value = description id = "desc" class="form-control"}}
+	</div>
+	<div class = "form-group">
+	 <label for = "coverimage">CoverPage :</label>{{input value = coverpage id = "coverimage" class="form-control"}}
+	</div>
+	<button {{action "addbook"}}>Add</button>
+	</div>
+   </script>
+
+  <script src="lib/js/libs/jquery-2.1.4.js"></script>
+  <script src="lib/js/libs/ember-template-compiler.js"></script>
+  <script src="lib/js/libs/ember.debug.js"></script>
+  <script src="lib/js/libs/ember-data.js"></script>
+  <script src="lib/js/libs/handlebars-v1.3.0.js"></script>
+  <script src="lib/js/app.js"></script>
+</body>
+</html>

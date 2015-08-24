@@ -1,0 +1,29 @@
+#details{
+	position: absolute;
+    left: 660px;
+    top: 70px;
+}
+#books{
+	width:400px;
+}
+#createbtn{
+	
+}
+#coverpage{
+	position: absolute;
+    left: 450px;
+    top: 90px;
+}
+
+#details h1{
+	font-size:1.5em;
+	font-family:Impact, fantasy;
+}
+
+#new{
+	position: absolute;
+    left: 660px;
+    top: 90px;
+}
+
+label  br{display: none;}
