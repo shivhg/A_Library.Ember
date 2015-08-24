@@ -22,8 +22,8 @@
 
 #new{
 	position: absolute;
-    left: 660px;
+    left: 860px;
     top: 90px;
 }
 
-label  br{display: none;}
+.form-group {display: inline;}

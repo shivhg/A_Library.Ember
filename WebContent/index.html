@@ -17,9 +17,9 @@
        </div>
       <div>
       <ul class="nav navbar-nav">
-		<li class="active">{{#link-to 'about'}}About{{/link-to}}</li>
+		<li>{{#link-to 'about'}}About{{/link-to}}</li>
 		<li>{{#link-to 'contactme'}}Contact Me{{/link-to}}</li>
-		<li>{{#link-to 'books'}}Books{{/link-to}}</li>
+		<li class="active">{{#link-to 'books'}}Books{{/link-to}}</li>
        </ul>
       </div>
      </div>
@@ -37,7 +37,10 @@
       {{#link-to  'books.details' book.id	 class="list-group-item"}}{{book.name}}{{/link-to}}
 	 {{/each}}
     </div>
-	<button {{action "createbook"}}>Add New</button>
+	<button class="btn btn-primary"  {{action "createbook"}} {{bind-attr disabled=increate}}>Add New</button>
+	<br/>
+	<br/>
+	<button class="btn btn-info">Favourites &nbsp;&nbsp;&nbsp; {{favouritecnt}}</button>
 	{{outlet}}
    </script>
   
@@ -51,24 +54,28 @@
 	  <h1>{{name}}</h1>
 	  Author :  {{author}}<br/>
 	  Description : {{description}} <br/>
+		<br/>
+	  <button {{bind-attr class=btnType}} {{action "makefav"}}>{{Favouritelabel}}{{favouritecnt}}</button>
+
 	</div>
    </script>
    
    <script type="text/x-handlebars" id = "books/new">
+	<div id = "coverpage"><img {{bind-attr src=imagesrc}} alt="cant load" width="200" height="250"></div>
 	<div id = "new">
-	<div class = "form-group">
-	 <label for="name">Name :</label> {{input value = name id = "name" class="form-control"}} 
-	</div>
-	<div class = "form-group">
-	 <label for = "author">Author :</label>{{input value = author id = "author" class="form-control"}}
-	</div>
-	<div class = "form-group">
-	 <label for = "desc">Description :</label>{{input value = description id = "desc" class="form-control"}}
-	</div>
-	<div class = "form-group">
-	 <label for = "coverimage">CoverPage :</label>{{input value = coverpage id = "coverimage" class="form-control"}}
-	</div>
-	<button {{action "addbook"}}>Add</button>
+	<div class = "form-inline">
+	 <label for="name">Name  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> {{input value = name id = "name" class="form-control"}} 
+	</div> <br/>
+	<div class = "form-inline">
+	 <label for = "author">Author &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>{{input value = author id = "author" class="form-control"}}
+	</div> <br/>
+	<div class = "form-inline">
+	 <label for = "desc">Description &nbsp;</label>{{input value = description id = "desc" class="form-control"}}
+	</div> <br/>
+	<div class = "form-inline">
+	 <label for = "coverimage">CoverImage &nbsp;</label>{{input value = imagesrc id = "coverimage" class="form-control"}}
+	</div> <br/>
+	<button  type="button" class="btn btn-primary" {{action "addbook"}} {{bind-attr disabled = checkall}}>Add</button>
 	</div>
    </script>
 
